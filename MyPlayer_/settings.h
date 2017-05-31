@@ -19,12 +19,7 @@ class Settings : public QWidget
     Q_OBJECT
 public:
     static Settings* sharedSettingWindow();
-        static Settings * s;
-    void set1();
-    void set2();
-    void set3();
-    void set4();
-    void set5();
+    static Settings * s;
     ~Settings();
 
     SettingButton *normal_setting;
@@ -32,6 +27,12 @@ public:
     SettingButton *timer_setting;
     SettingButton *shotkey_setting;
     SettingButton *lyric_setting;
+public slots:
+    void set1();
+    void set2();
+    void set3();
+    void set4();
+    void set5();
 protected:
     void mouseReleaseEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent * );
@@ -58,7 +59,8 @@ public:
     void setCallback(QObject *rec, SEL_MenuHandler selector);
     ~SettingButton();
     void setFocusPic(QString pic);
-
+signals:
+    void click();
 protected:
     void focusInEvent(QFocusEvent *ev);
     void focusOutEvent(QFocusEvent *ev);
