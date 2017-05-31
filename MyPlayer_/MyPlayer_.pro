@@ -59,3 +59,8 @@ win32{
 }
 unix:SOURCES += $$PWD/qxtglobalshortcut_x11.cpp
 mac:SOURCES += $$PWD/qxtglobalshortcut_mac.cpp
+
+DISTFILES += \
+    ico.rc
+RC_FILE = \
+    ico.rc
