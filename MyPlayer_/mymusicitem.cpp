@@ -164,7 +164,7 @@ void MyMusicItem::enterEvent(QEvent *)
                                       ":/img/mv_press.png",
                                       this);
                 button->move(300,2);
-                button->setCallback(this,my_selector(openMV));
+                button->setCallback(this,my_selector(MyMusicItem::openMV));
             }
         }else {
             if(NULL == button){

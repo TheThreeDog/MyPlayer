@@ -29,22 +29,22 @@ RightKeyMenu::RightKeyMenu(int music_index,QString path,QWidget *parent):QWidget
     play_btn = new RightMenuButton(this);
     play_btn->move(33,2);
     play_btn->setText("播放/暂停");
-    play_btn->setCallback(this,(FUNC_PTR)(playBtnClicked));
+    play_btn->setCallback(this,my_selector(RightKeyMenu::playBtnClicked));
 
     open_in_explorer_btn = new RightMenuButton(this);
     open_in_explorer_btn->move(33,30);
     open_in_explorer_btn->setText("打开文件所在位置");
-    open_in_explorer_btn->setCallback(this,(FUNC_PTR)openInExplorer);
+    open_in_explorer_btn->setCallback(this,my_selector(RightKeyMenu::openInExplorer));
 
     remove_btn = new RightMenuButton(this);
     remove_btn->move(33,60);
     remove_btn->setText("移除歌曲");
-    remove_btn->setCallback(this,(FUNC_PTR)removeMusic);
+    remove_btn->setCallback(this,my_selector(RightKeyMenu::removeMusic));
 
     delete_btn = new RightMenuButton(this);
     delete_btn->move(33,90);
     delete_btn->setText("清空列表");
-    delete_btn->setCallback(this,(FUNC_PTR)clearList);
+    delete_btn->setCallback(this,my_selector(RightKeyMenu::clearList));
 
     RightMenuButton * add_btn = new RightMenuButton(this);
     add_btn->move(33,130);
@@ -54,7 +54,7 @@ RightKeyMenu::RightKeyMenu(int music_index,QString path,QWidget *parent):QWidget
     RightMenuButton * play_model_btn = new RightMenuButton(this);
     play_model_btn->move(33,160);
     play_model_btn->setText("播放模式");
-    play_model_btn->setCallback(this,(FUNC_PTR)playModeChange);
+    play_model_btn->setCallback(this,my_selector(RightKeyMenu::playModeChange));
 
     RightMenuButton * remote_controll_btn = new RightMenuButton(this);
     remote_controll_btn->move(33,200);
@@ -64,22 +64,22 @@ RightKeyMenu::RightKeyMenu(int music_index,QString path,QWidget *parent):QWidget
     RightMenuButton * cube_mode_btn = new RightMenuButton(this);
     cube_mode_btn->move(33,230);
     cube_mode_btn->setText("魔方模式");
-    cube_mode_btn->setCallback(this,(FUNC_PTR)cubeMode);
+    cube_mode_btn->setCallback(this,my_selector(RightKeyMenu::cubeMode));
 
     RightMenuButton * on_time_btn = new RightMenuButton(this);
     on_time_btn->move(33,260);
     on_time_btn->setText("定时设置");
-    on_time_btn->setCallback(this,(FUNC_PTR)timerSetting);
+    on_time_btn->setCallback(this,my_selector(RightKeyMenu::timerSetting));
 
     RightMenuButton * window_on_top_btn = new RightMenuButton(this);
     window_on_top_btn->move(33,300);
     window_on_top_btn->setText("窗口总在最前");
-    window_on_top_btn->setCallback(this,(FUNC_PTR)setWindowOnTop);
+    window_on_top_btn->setCallback(this,my_selector(RightKeyMenu::setWindowOnTop));
 
     RightMenuButton * shot_key_btn = new RightMenuButton(this);
     shot_key_btn->move(33,330);
     shot_key_btn->setText("热键设置");
-    shot_key_btn->setCallback(this,(FUNC_PTR)shotKeySetting);
+    shot_key_btn->setCallback(this,my_selector(RightKeyMenu::shotKeySetting));
 
     RightMenuButton * help_btn = new RightMenuButton(this);
     help_btn->move(33,370);

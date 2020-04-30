@@ -72,14 +72,14 @@ void Widget::initInterface()
     //初始化魔方
     cube = new Cube;
     cube->setWidget(this);
-    cube->getButtons().at(0)->setCallback(this,my_selector(playOrPause));
-    cube->getButtons().at(1)->setCallback(this,my_selector(playOrPause));
-    cube->getButtons().at(2)->setCallback(this,my_selector(playPrevious));
-    cube->getButtons().at(3)->setCallback(this,my_selector(playNext));
-    cube->getButtons().at(4)->setCallback(this,my_selector(volumeSub));
-    cube->getButtons().at(5)->setCallback(this,my_selector(volumeAdd));
+    cube->getButtons().at(0)->setCallback(this,my_selector(Widget::playOrPause));
+    cube->getButtons().at(1)->setCallback(this,my_selector(Widget::playOrPause));
+    cube->getButtons().at(2)->setCallback(this,my_selector(Widget::playPrevious));
+    cube->getButtons().at(3)->setCallback(this,my_selector(Widget::playNext));
+    cube->getButtons().at(4)->setCallback(this,my_selector(Widget::volumeSub));
+    cube->getButtons().at(5)->setCallback(this,my_selector(Widget::volumeAdd));
     //桌面歌词的开关
-    cube->getButtons().at(6)->setCallback(this,my_selector(setLyricShown));
+    cube->getButtons().at(6)->setCallback(this,my_selector(Widget::setLyricShown));
 
     //初始化lrc歌词类
     lrc = new MyLrc;
@@ -138,18 +138,18 @@ void Widget::initInterface()
     //加载按钮
     loadButtons();
     //设置按钮的回调函数
-    add_btn->setCallback(this,my_selector(openFile));
-    play_btn->setCallback(this,my_selector(playOrPause));
-    pause_btn->setCallback(this,my_selector(playOrPause));
-    next_btn->setCallback(this,my_selector(playNext));
-    previous_btn->setCallback(this,my_selector(playPrevious));
-    mini_btn->setCallback(this,my_selector(minisizeWindow));
-    close_btn->setCallback(this,my_selector(close));
-    setting_btn->setCallback(this,my_selector(createSetting));
-    lyric_open_btn->setCallback(this,my_selector(setLyricShown));
-    lyric_close_btn->setCallback(this,my_selector(setLyricShown));
-    remote_start_btn->setCallback(this,my_selector(startOrStopNetwork));
-    remote_stop_btn->setCallback(this,my_selector(startOrStopNetwork));
+    add_btn->setCallback(this,my_selector(Widget::openFile));
+    play_btn->setCallback(this,my_selector(Widget::playOrPause));
+    pause_btn->setCallback(this,my_selector(Widget::playOrPause));
+    next_btn->setCallback(this,my_selector(Widget::playNext));
+    previous_btn->setCallback(this,my_selector(Widget::playPrevious));
+    mini_btn->setCallback(this,my_selector(Widget::minisizeWindow));
+    close_btn->setCallback(this,my_selector(Widget::close));
+    setting_btn->setCallback(this,my_selector(Widget::createSetting));
+    lyric_open_btn->setCallback(this,my_selector(Widget::setLyricShown));
+    lyric_close_btn->setCallback(this,my_selector(Widget::setLyricShown));
+    remote_start_btn->setCallback(this,my_selector(Widget::startOrStopNetwork));
+    remote_stop_btn->setCallback(this,my_selector(Widget::startOrStopNetwork));
 
     connect(play_mode_btn,SIGNAL(playModeChange(int )),
             this,SLOT(playModeChange(int)));

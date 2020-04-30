@@ -32,7 +32,7 @@ Settings::Settings(QWidget *parent) : QWidget(parent)
     normal_setting->move(60,102);
     normal_setting->setFocusPic(":/img/changgui_selected.png");
     connect(normal_setting,SIGNAL(click()),this,SLOT(set1()));
-    normal_setting->setCallback(this,my_selector(set1));
+    normal_setting->setCallback(this,my_selector(Settings::set1));
     //normal_setting->setFocus();
 
     remote_setting = new SettingButton(
@@ -44,7 +44,7 @@ Settings::Settings(QWidget *parent) : QWidget(parent)
     remote_setting->move(60,149);
     remote_setting->setFocusPic(":/img/yaokong_selected.png");
     connect(remote_setting,SIGNAL(click()),this,SLOT(set2()));
-    remote_setting->setCallback(this,my_selector(set2));
+    remote_setting->setCallback(this,my_selector(Settings::set2));
 
     timer_setting = new SettingButton(
                 ":/img/dingshi_normal.png",
@@ -55,7 +55,7 @@ Settings::Settings(QWidget *parent) : QWidget(parent)
     timer_setting->move(60,196);
     timer_setting->setFocusPic(":/img/dingshi_selected.png");
     connect(timer_setting,SIGNAL(click()),this,SLOT(set3()));
-    timer_setting->setCallback(this,my_selector(set3));
+    timer_setting->setCallback(this,my_selector(Settings::set3));
 
     shotkey_setting = new SettingButton(
                 ":/img/rejian_normal.png",
@@ -66,7 +66,7 @@ Settings::Settings(QWidget *parent) : QWidget(parent)
     shotkey_setting->move(60,243);
     shotkey_setting->setFocusPic(":/img/rejian_selected.png");
     connect(shotkey_setting,SIGNAL(click()),this,SLOT(set4()));
-    shotkey_setting->setCallback(this,my_selector(set4));
+    shotkey_setting->setCallback(this,my_selector(Settings::set4));
 
     lyric_setting = new SettingButton(
                 ":/img/geci_normal.png",
@@ -77,7 +77,7 @@ Settings::Settings(QWidget *parent) : QWidget(parent)
     lyric_setting->move(60,290);
     lyric_setting->setFocusPic(":/img/geci_selected.png");
     connect(lyric_setting,SIGNAL(click()),this,SLOT(set5()));
-    lyric_setting->setCallback(this,my_selector(set5));
+    lyric_setting->setCallback(this,my_selector(Settings::set5));
 
 }
 
